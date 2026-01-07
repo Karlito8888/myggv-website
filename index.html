@@ -13,87 +13,215 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Madimi One', sans-serif;
-            background: linear-gradient(135deg, #5bc46d 0%, #ffd666 100%);
+            background: linear-gradient(135deg, #5bc46d 0%, #8ed97a 25%, #ffd666 75%, #ffcc44 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
         }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .container {
-            background: white;
-            border-radius: 24px;
-            padding: 48px;
-            max-width: 480px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 32px;
+            padding: 56px 48px;
+            max-width: 420px;
+            width: 100%;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
         }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #5bc46d, #ffd666, #5bc46d);
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
         .logo {
-            margin-bottom: 16px;
+            margin-bottom: 24px;
+            animation: float 3s ease-in-out infinite;
         }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
         .logo img {
-            max-width: 200px;
+            max-width: 220px;
             height: auto;
+            filter: drop-shadow(0 8px 16px rgba(91, 196, 109, 0.3));
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
+
+        .logo img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 12px 24px rgba(91, 196, 109, 0.4));
+        }
+
         h1 {
             color: #1a1a2e;
-            font-size: 2.5rem;
-            margin-bottom: 8px;
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
         }
+
         .tagline {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 32px;
+            color: #555;
+            font-size: 1.15rem;
+            margin-bottom: 36px;
+            line-height: 1.5;
         }
+
         .store-buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-bottom: 32px;
+            gap: 14px;
+            margin-bottom: 36px;
         }
+
         .store-btn {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            padding: 14px 24px;
-            border-radius: 12px;
+            padding: 16px 28px;
+            border-radius: 16px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
+
+        .store-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .store-btn:hover::before {
+            left: 100%;
+        }
+
         .store-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
         }
+
         .store-btn.android {
-            background: #3DDC84;
+            background: linear-gradient(135deg, #3DDC84 0%, #2bc471 100%);
             color: white;
+            box-shadow: 0 6px 20px rgba(61, 220, 132, 0.4);
         }
+
         .store-btn.ios {
-            background: #000;
+            background: linear-gradient(135deg, #1a1a2e 0%, #000 100%);
             color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
+
         .store-btn.coming-soon {
-            background: #e0e0e0;
-            color: #888;
+            background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
+            color: #777;
             pointer-events: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
+
+        .store-btn .icon {
+            font-size: 1.2rem;
+        }
+
         .links {
             display: flex;
             justify-content: center;
-            gap: 24px;
-            font-size: 0.9rem;
+            gap: 32px;
+            font-size: 0.95rem;
         }
+
         .links a {
             color: #5bc46d;
             text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
         }
+
+        .links a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #5bc46d, #ffd666);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
         .links a:hover {
-            text-decoration: underline;
+            color: #4aa85c;
+            background: rgba(91, 196, 109, 0.1);
+        }
+
+        .links a:hover::after {
+            width: 60%;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 28px;
+                border-radius: 24px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .logo img {
+                max-width: 180px;
+            }
+            .links {
+                flex-direction: column;
+                gap: 12px;
+            }
         }
     </style>
 </head>
@@ -105,10 +233,10 @@
 
         <div class="store-buttons">
             <a href="#" class="store-btn android coming-soon">
-                <span>▶</span> Google Play - Coming Soon
+                <span class="icon">▶</span> Google Play - Coming Soon
             </a>
             <a href="#" class="store-btn ios coming-soon">
-                <span></span> App Store - Coming Soon
+                <span class="icon"></span> App Store - Coming Soon
             </a>
         </div>
 
