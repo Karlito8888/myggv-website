@@ -66,12 +66,14 @@
             filter: drop-shadow(0 12px 24px rgba(91, 196, 109, 0.4));
         }
 
-        h1 {
-            color: #1a1a2e;
-            font-size: 2.8rem;
+        .title {
             margin-bottom: 12px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            letter-spacing: 1px;
+        }
+
+        .title img {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
         }
 
         .tagline {
@@ -206,7 +208,7 @@
 <body>
     <div class="container">
         <div class="logo"><img src="logo.png" alt="Garden Grove Village Logo"></div>
-        <h1>MyGGV</h1>
+        <div class="title"><img src="title.png" alt="MyGGV"></div>
         <p class="tagline">Connect with your local community</p>
 
         <div class="store-buttons">
