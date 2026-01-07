@@ -16,20 +16,15 @@
 
         body {
             font-family: 'Madimi One', sans-serif;
-            background: linear-gradient(135deg, #5bc46d 0%, #8ed97a 25%, #ffd666 75%, #ffcc44 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .container {
@@ -47,26 +42,6 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.8);
             position: relative;
             overflow: hidden;
-        }
-
-        .container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('background.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.08;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .container > * {
-            position: relative;
-            z-index: 1;
         }
 
         .container::before {
