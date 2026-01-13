@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyGGV - Your Local Community App</title>
+
+    <!-- Preload des images responsives pour de meilleures performances -->
+    <link rel="preload" as="image" href="images/background-mobile-sm.webp" media="(max-width: 480px)">
+    <link rel="preload" as="image" href="images/background-mobile-lg.webp" media="(min-width: 481px) and (max-width: 767px)">
+    <link rel="preload" as="image" href="images/background-tablet.webp" media="(min-width: 768px) and (max-width: 1023px)">
+    <link rel="preload" as="image" href="images/background-laptop.webp" media="(min-width: 1024px)">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -14,18 +22,120 @@
             box-sizing: border-box;
         }
 
+        /* =================================================================
+           IMAGES DE FOND RESPONSIVES
+           ================================================================= */
+
         body {
             font-family: 'Madimi One', sans-serif;
-            background-image: url('background.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
+
+            /* Image par défaut (mobile small) */
+            background-image: url('images/background-mobile-sm.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* Pas de fixed sur mobile pour de meilleures performances */
+            background-attachment: scroll;
         }
+
+        /* Fallback PNG pour navigateurs sans support WebP */
+        @supports not (background-image: url('test.webp')) {
+            body {
+                background-image: url('images/background-mobile-sm.png');
+            }
+        }
+
+        /* Mobile Large (481px - 767px) */
+        @media (min-width: 481px) {
+            body {
+                background-image: url('images/background-mobile-lg.webp');
+            }
+            @supports not (background-image: url('test.webp')) {
+                body {
+                    background-image: url('images/background-mobile-lg.png');
+                }
+            }
+        }
+
+        /* Tablette Portrait (768px - 1023px) */
+        @media (min-width: 768px) {
+            body {
+                background-image: url('images/background-tablet.webp');
+            }
+            @supports not (background-image: url('test.webp')) {
+                body {
+                    background-image: url('images/background-tablet.png');
+                }
+            }
+        }
+
+        /* Tablette Paysage (1024px - 1365px) */
+        @media (min-width: 1024px) {
+            body {
+                background-image: url('images/background-tablet-landscape.webp');
+                /* On peut activer fixed sur desktop pour l'effet parallax */
+                background-attachment: fixed;
+            }
+            @supports not (background-image: url('test.webp')) {
+                body {
+                    background-image: url('images/background-tablet-landscape.png');
+                }
+            }
+        }
+
+        /* Laptop HD (1366px - 1919px) */
+        @media (min-width: 1366px) {
+            body {
+                background-image: url('images/background-laptop.webp');
+            }
+            @supports not (background-image: url('test.webp')) {
+                body {
+                    background-image: url('images/background-laptop.png');
+                }
+            }
+        }
+
+        /* Desktop / Retina 2x (1920px+) */
+        @media (min-width: 1920px) {
+            body {
+                background-image: url('images/background-desktop.webp');
+            }
+            @supports not (background-image: url('test.webp')) {
+                body {
+                    background-image: url('images/background-desktop.png');
+                }
+            }
+        }
+
+        /* Support écrans haute densité (Retina) */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            /* Utiliser une image plus grande pour les écrans Retina */
+            @media (max-width: 767px) {
+                body {
+                    background-image: url('images/background-tablet.webp');
+                }
+            }
+            @media (min-width: 768px) and (max-width: 1365px) {
+                body {
+                    background-image: url('images/background-laptop.webp');
+                }
+            }
+            @media (min-width: 1366px) {
+                body {
+                    background-image: url('images/background-desktop.webp');
+                }
+            }
+        }
+
+        /* =================================================================
+           STYLES DU CONTENEUR (inchangés)
+           ================================================================= */
 
         .container {
             background: rgba(255, 255, 255, 0.65);
