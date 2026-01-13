@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyGGV - Your Local Community App</title>
+    <meta name="description" content="MyGGV connects you with your local Garden Grove Village community. Download the app to stay informed about local events, news, and connect with neighbors.">
+    <meta name="theme-color" content="#5bc46d">
 
-    <!-- Preload des images responsives pour de meilleures performances -->
-    <link rel="preload" as="image" href="images/background-mobile-sm.webp" media="(max-width: 480px)">
-    <link rel="preload" as="image" href="images/background-mobile-lg.webp" media="(min-width: 481px) and (max-width: 767px)">
-    <link rel="preload" as="image" href="images/background-tablet.webp" media="(min-width: 768px) and (max-width: 1023px)">
-    <link rel="preload" as="image" href="images/background-laptop.webp" media="(min-width: 1024px)">
+    <!-- Preload des images responsives pour de meilleures performances (LCP optimization) -->
+    <link rel="preload" as="image" href="images/background-mobile-sm.webp" media="(max-width: 480px)" fetchpriority="high">
+    <link rel="preload" as="image" href="images/background-mobile-lg.webp" media="(min-width: 481px) and (max-width: 767px)" fetchpriority="high">
+    <link rel="preload" as="image" href="images/background-tablet.webp" media="(min-width: 768px) and (max-width: 1023px)" fetchpriority="high">
+    <link rel="preload" as="image" href="images/background-laptop.webp" media="(min-width: 1024px)" fetchpriority="high">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -319,24 +321,28 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo"><img src="logo.png" alt="Garden Grove Village Logo"></div>
-        <div class="title"><img src="title.png" alt="MyGGV"></div>
+    <main class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Garden Grove Village Logo" width="163" height="46">
+        </div>
+        <div class="title">
+            <img src="title.png" alt="MyGGV" width="270" height="90">
+        </div>
         <p class="tagline">Connect with your local community</p>
 
         <div class="store-buttons">
-            <a href="#" class="store-btn android coming-soon">
-                <span class="icon">▶</span> Google Play - Coming Soon
+            <a href="#" class="store-btn android coming-soon" aria-label="Google Play - Coming Soon">
+                <span class="icon" aria-hidden="true">▶</span> Google Play - Coming Soon
             </a>
-            <a href="#" class="store-btn ios coming-soon">
-                <span class="icon"></span> App Store - Coming Soon
+            <a href="#" class="store-btn ios coming-soon" aria-label="App Store - Coming Soon">
+                <span class="icon" aria-hidden="true"></span> App Store - Coming Soon
             </a>
         </div>
 
-        <div class="links">
+        <nav class="links" aria-label="Footer navigation">
             <a href="privacy-policy.html">Privacy Policy</a>
             <a href="mailto:cb.dweb49@gmail.com">Contact</a>
-        </div>
-    </div>
+        </nav>
+    </main>
 </body>
 </html>
