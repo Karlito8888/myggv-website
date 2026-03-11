@@ -1,382 +1,433 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyGGV - Your Local Community App</title>
-    <meta name="description" content="MyGGV connects you with your local Garden Grove Village community. Download the app to stay informed about local events, news, and connect with neighbors.">
-    <meta name="theme-color" content="#5bc46d">
-    <meta name="author" content="MyGGV">
-    <meta name="robots" content="index, follow">
+    <meta
+      name="description"
+      content="MyGGV connects you with your local Garden Grove Village community. Download the app to stay informed about local events, news, and connect with neighbors."
+    />
+    <meta name="theme-color" content="#5bc46d" />
+    <meta name="author" content="MyGGV" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://myggv.com/" />
 
     <!-- Favicon et icônes -->
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="icons/icon-48x48.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192x192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512x512.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icons/icon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icons/icon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="icons/icon-48x48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="icons/icon-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="512x512"
+      href="icons/icon-512x512.png"
+    />
 
     <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="MyGGV">
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="MyGGV" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://myggv.com/">
-    <meta property="og:title" content="MyGGV - Your Local Community App">
-    <meta property="og:description" content="Connect with your local Garden Grove Village community. Stay informed about local events, news, and connect with neighbors.">
-    <meta property="og:image" content="https://myggv.com/icons/icon-512x512.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-    <meta property="og:site_name" content="MyGGV">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myggv.com/" />
+    <meta property="og:title" content="MyGGV - Your Local Community App" />
+    <meta
+      property="og:description"
+      content="Connect with your local Garden Grove Village community. Stay informed about local events, news, and connect with neighbors."
+    />
+    <meta
+      property="og:image"
+      content="https://myggv.com/icons/icon-512x512.png"
+    />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:site_name" content="MyGGV" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://myggv.com/">
-    <meta name="twitter:title" content="MyGGV - Your Local Community App">
-    <meta name="twitter:description" content="Connect with your local Garden Grove Village community. Stay informed about local events, news, and connect with neighbors.">
-    <meta name="twitter:image" content="https://myggv.com/icons/icon-512x512.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://myggv.com/" />
+    <meta name="twitter:title" content="MyGGV - Your Local Community App" />
+    <meta
+      name="twitter:description"
+      content="Connect with your local Garden Grove Village community. Stay informed about local events, news, and connect with neighbors."
+    />
+    <meta
+      name="twitter:image"
+      content="https://myggv.com/icons/icon-512x512.png"
+    />
 
     <!-- Preload des images responsives pour de meilleures performances (LCP optimization) -->
-    <link rel="preload" as="image" href="images/background-mobile-sm.webp" media="(max-width: 480px)" fetchpriority="high">
-    <link rel="preload" as="image" href="images/background-mobile-lg.webp" media="(min-width: 481px) and (max-width: 767px)" fetchpriority="high">
-    <link rel="preload" as="image" href="images/background-tablet.webp" media="(min-width: 768px) and (max-width: 1023px)" fetchpriority="high">
-    <link rel="preload" as="image" href="images/background-laptop.webp" media="(min-width: 1024px)" fetchpriority="high">
+    <link
+      rel="preload"
+      as="image"
+      href="images/background-mobile-sm.webp"
+      media="(max-width: 480px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/background-mobile-lg.webp"
+      media="(min-width: 481px) and (max-width: 767px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/background-tablet.webp"
+      media="(min-width: 768px) and (max-width: 1023px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/background-tablet-landscape.webp"
+      media="(min-width: 1024px) and (max-width: 1365px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/background-laptop.webp"
+      media="(min-width: 1366px) and (max-width: 1919px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/background-desktop.webp"
+      media="(min-width: 1920px)"
+      fetchpriority="high"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        /* =================================================================
+      /* =================================================================
            IMAGES DE FOND RESPONSIVES
            ================================================================= */
 
+      body {
+        font-family: "Madimi One", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        /* Image par défaut (mobile small) */
+        background-image: url("images/background-mobile-sm.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        /* Pas de fixed sur mobile pour de meilleures performances */
+        background-attachment: scroll;
+      }
+
+      /* Mobile Large (481px - 767px) */
+      @media (min-width: 481px) {
         body {
-            font-family: 'Madimi One', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-
-            /* Image par défaut (mobile small) */
-            background-image: url('images/background-mobile-sm.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            /* Pas de fixed sur mobile pour de meilleures performances */
-            background-attachment: scroll;
+          background-image: url("images/background-mobile-lg.webp");
         }
+      }
 
-        /* Fallback PNG pour navigateurs sans support WebP */
-        @supports not (background-image: url('test.webp')) {
-            body {
-                background-image: url('images/background-mobile-sm.png');
-            }
+      /* Tablette Portrait (768px - 1023px) */
+      @media (min-width: 768px) {
+        body {
+          background-image: url("images/background-tablet.webp");
         }
+      }
 
-        /* Mobile Large (481px - 767px) */
-        @media (min-width: 481px) {
-            body {
-                background-image: url('images/background-mobile-lg.webp');
-            }
-            @supports not (background-image: url('test.webp')) {
-                body {
-                    background-image: url('images/background-mobile-lg.png');
-                }
-            }
+      /* Tablette Paysage (1024px - 1365px) */
+      @media (min-width: 1024px) {
+        body {
+          background-image: url("images/background-tablet-landscape.webp");
+          background-attachment: fixed;
         }
+      }
 
-        /* Tablette Portrait (768px - 1023px) */
-        @media (min-width: 768px) {
-            body {
-                background-image: url('images/background-tablet.webp');
-            }
-            @supports not (background-image: url('test.webp')) {
-                body {
-                    background-image: url('images/background-tablet.png');
-                }
-            }
+      /* Laptop HD (1366px - 1919px) */
+      @media (min-width: 1366px) {
+        body {
+          background-image: url("images/background-laptop.webp");
         }
+      }
 
-        /* Tablette Paysage (1024px - 1365px) */
-        @media (min-width: 1024px) {
-            body {
-                background-image: url('images/background-tablet-landscape.webp');
-                /* On peut activer fixed sur desktop pour l'effet parallax */
-                background-attachment: fixed;
-            }
-            @supports not (background-image: url('test.webp')) {
-                body {
-                    background-image: url('images/background-tablet-landscape.png');
-                }
-            }
+      /* Desktop / Retina 2x (1920px+) */
+      @media (min-width: 1920px) {
+        body {
+          background-image: url("images/background-desktop.webp");
         }
+      }
 
-        /* Laptop HD (1366px - 1919px) */
+      /* Support écrans haute densité (Retina) */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        /* Utiliser une image plus grande pour les écrans Retina */
+        @media (max-width: 767px) {
+          body {
+            background-image: url("images/background-tablet.webp");
+          }
+        }
+        @media (min-width: 768px) and (max-width: 1365px) {
+          body {
+            background-image: url("images/background-laptop.webp");
+          }
+        }
         @media (min-width: 1366px) {
-            body {
-                background-image: url('images/background-laptop.webp');
-            }
-            @supports not (background-image: url('test.webp')) {
-                body {
-                    background-image: url('images/background-laptop.png');
-                }
-            }
+          body {
+            background-image: url("images/background-desktop.webp");
+          }
         }
+      }
 
-        /* Desktop / Retina 2x (1920px+) */
-        @media (min-width: 1920px) {
-            body {
-                background-image: url('images/background-desktop.webp');
-            }
-            @supports not (background-image: url('test.webp')) {
-                body {
-                    background-image: url('images/background-desktop.png');
-                }
-            }
-        }
-
-        /* Support écrans haute densité (Retina) */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            /* Utiliser une image plus grande pour les écrans Retina */
-            @media (max-width: 767px) {
-                body {
-                    background-image: url('images/background-tablet.webp');
-                }
-            }
-            @media (min-width: 768px) and (max-width: 1365px) {
-                body {
-                    background-image: url('images/background-laptop.webp');
-                }
-            }
-            @media (min-width: 1366px) {
-                body {
-                    background-image: url('images/background-desktop.webp');
-                }
-            }
-        }
-
-        /* =================================================================
+      /* =================================================================
            STYLES DU CONTENEUR (inchangés)
            ================================================================= */
 
+      .container {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 32px;
+        padding: 56px 48px;
+        max-width: 420px;
+        width: 100%;
+        text-align: center;
+        box-shadow:
+          0 25px 50px -12px rgba(0, 0, 0, 0.25),
+          0 0 0 1px rgba(255, 255, 255, 0.5),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .logo {
+        margin-bottom: 24px;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      .logo img {
+        max-width: 220px;
+        height: auto;
+        filter: drop-shadow(0 8px 16px rgba(91, 196, 109, 0.3));
+        transition:
+          transform 0.3s ease,
+          filter 0.3s ease;
+      }
+
+      .logo img:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 12px 24px rgba(91, 196, 109, 0.4));
+      }
+
+      .title {
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .title img {
+        max-height: 160px;
+        max-width: 270px;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+      }
+
+      .tagline {
+        color: #555;
+        font-size: 1rem;
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      .store-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 36px;
+      }
+
+      .store-badge {
+        display: block;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 8px;
+      }
+
+      .store-badge:hover {
+        transform: translateY(-3px);
+        filter: brightness(1.1);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      .store-badge:active {
+        transform: translateY(-1px);
+      }
+
+      .store-badge img {
+        display: block;
+        height: 52px;
+        width: auto;
+      }
+
+      .links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px 32px;
+        font-size: 0.95rem;
+      }
+
+      .links a {
+        color: #5bc46d;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .links a::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #5bc46d, #ffd666);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .links a:hover {
+        color: #4aa85c;
+        background: rgba(91, 196, 109, 0.1);
+      }
+
+      .links a:hover::after {
+        width: 60%;
+      }
+
+      @media (max-width: 480px) {
         .container {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 32px;
-            padding: 56px 48px;
-            max-width: 420px;
-            width: 100%;
-            text-align: center;
-            box-shadow:
-                0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                0 0 0 1px rgba(255, 255, 255, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
-            position: relative;
-            overflow: hidden;
+          padding: 40px 28px;
+          border-radius: 24px;
         }
-
-        .logo {
-            margin-bottom: 24px;
-            animation: float 3s ease-in-out infinite;
+        h1 {
+          font-size: 2.2rem;
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
         .logo img {
-            max-width: 220px;
-            height: auto;
-            filter: drop-shadow(0 8px 16px rgba(91, 196, 109, 0.3));
-            transition: transform 0.3s ease, filter 0.3s ease;
+          max-width: 180px;
         }
-
-        .logo img:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 12px 24px rgba(91, 196, 109, 0.4));
-        }
-
-        .title {
-            margin-bottom: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .title img {
-            max-height: 160px;
-            max-width: 270px;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-        }
-
-        .tagline {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 36px;
-            line-height: 1.5;
-        }
-
-        .store-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-bottom: 36px;
-        }
-
-        .store-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 16px 28px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .store-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .store-btn:hover::before {
-            left: 100%;
-        }
-
-        .store-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
-        }
-
-        .store-btn.android {
-            background: linear-gradient(135deg, #3DDC84 0%, #2bc471 100%);
-            color: white;
-            box-shadow: 0 6px 20px rgba(61, 220, 132, 0.4);
-        }
-
-        .store-btn.ios {
-            background: linear-gradient(135deg, #1a1a2e 0%, #000 100%);
-            color: white;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .store-btn.coming-soon {
-            background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
-            color: #777;
-            pointer-events: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .store-btn .icon {
-            font-size: 1.2rem;
-        }
-
         .links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            font-size: 0.95rem;
+          flex-direction: column;
+          gap: 12px;
         }
-
-        .links a {
-            color: #5bc46d;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .links a::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #5bc46d, #ffd666);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .links a:hover {
-            color: #4aa85c;
-            background: rgba(91, 196, 109, 0.1);
-        }
-
-        .links a:hover::after {
-            width: 60%;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 40px 28px;
-                border-radius: 24px;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            .logo img {
-                max-width: 180px;
-            }
-            .links {
-                flex-direction: column;
-                gap: 12px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <main class="container">
-        <div class="logo">
-            <img src="logo.png" alt="Garden Grove Village Logo" width="163" height="46">
-        </div>
-        <div class="title">
-            <img src="title.png" alt="MyGGV" width="270" height="90">
-        </div>
-        <p class="tagline">Connect with your local community</p>
+      <div class="logo">
+        <img
+          src="logo.png"
+          alt="Garden Grove Village Logo"
+          width="163"
+          height="46"
+        />
+      </div>
+      <div class="title">
+        <img
+          src="title.png"
+          alt="MyGGV"
+          width="270"
+          height="90"
+          fetchpriority="high"
+        />
+      </div>
+      <p class="tagline">Connect with your local community</p>
 
-        <div class="store-buttons">
-            <a href="#" class="store-btn android coming-soon" aria-label="Google Play - Coming Soon">
-                <span class="icon" aria-hidden="true">▶</span> Google Play - Coming Soon
-            </a>
-            <a href="https://apps.apple.com/ph/app/myggv/id6757699416" class="store-btn ios" aria-label="Download on the App Store" target="_blank" rel="noopener noreferrer">
-                <span class="icon" aria-hidden="true"></span> Download on the App Store
-            </a>
-        </div>
+      <div class="store-buttons">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.myggv.app"
+          class="store-badge"
+          aria-label="Get it on Google Play"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="images/badge-playstore.png"
+            alt="Get it on Google Play"
+            height="52"
+          />
+        </a>
+        <a
+          href="https://apps.apple.com/app/myggv/id6757699416"
+          class="store-badge"
+          aria-label="Download on the App Store"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="images/badge-appstore.svg"
+            alt="Download on the App Store"
+            height="52"
+          />
+        </a>
+      </div>
 
-        <nav class="links" aria-label="Footer navigation">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="mailto:cb.dweb49@gmail.com">Contact</a>
-        </nav>
+      <nav class="links" aria-label="Footer navigation">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="child-safety.html">Child Safety</a>
+        <a href="mailto:support@myggv.com">Contact</a>
+      </nav>
     </main>
-</body>
+  </body>
 </html>
