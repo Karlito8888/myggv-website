@@ -18,43 +18,51 @@
       }
       body {
         font-family: "Madimi One", sans-serif;
-        background-image: url("images/background-mobile-sm.webp");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: scroll;
         color: #333;
         line-height: 1.7;
         min-height: 100vh;
       }
 
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url("images/background-mobile-sm.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
       @media (min-width: 481px) {
-        body {
+        body::before {
           background-image: url("images/background-mobile-lg.webp");
         }
       }
 
       @media (min-width: 768px) {
-        body {
+        body::before {
           background-image: url("images/background-tablet.webp");
         }
       }
 
       @media (min-width: 1024px) {
-        body {
+        body::before {
           background-image: url("images/background-tablet-landscape.webp");
-          background-attachment: fixed;
         }
       }
 
       @media (min-width: 1366px) {
-        body {
+        body::before {
           background-image: url("images/background-laptop.webp");
         }
       }
 
       @media (min-width: 1920px) {
-        body {
+        body::before {
           background-image: url("images/background-desktop.webp");
         }
       }
