@@ -197,26 +197,6 @@
         }
       }
 
-      /* Support écrans haute densité (Retina) */
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        /* Utiliser une image plus grande pour les écrans Retina */
-        @media (max-width: 767px) {
-          body {
-            background-image: url("images/background-tablet.webp");
-          }
-        }
-        @media (min-width: 768px) and (max-width: 1365px) {
-          body {
-            background-image: url("images/background-laptop.webp");
-          }
-        }
-        @media (min-width: 1366px) {
-          body {
-            background-image: url("images/background-desktop.webp");
-          }
-        }
-      }
-
       /* =================================================================
            STYLES DU CONTENEUR (inchangés)
            ================================================================= */
