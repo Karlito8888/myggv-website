@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["55KGMQ6P8Z.com.myggv.app"],
+        "components": [
+          {
+            "/": "/i/*",
+            "comment": "Referral invite links open the MyGGV app"
+          }
+        ]
+      }
+    ]
+  }
+}

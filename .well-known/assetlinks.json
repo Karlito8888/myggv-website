@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.myggv.app",
+      "sha256_cert_fingerprints": [
+        "EB:C0:C5:43:F4:03:02:CF:6C:71:DA:65:B5:BA:88:71:87:B0:68:AD:EC:C5:B2:27:AD:15:20:5A:6C:65:35:6F"
+      ]
+    }
+  }
+]

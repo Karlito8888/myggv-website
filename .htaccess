@@ -1,0 +1,6 @@
+# Universal Links iOS : le fichier AASA n'a pas d'extension → Apache le sert par défaut en
+# application/octet-stream, ce qu'Apple refuse. On force le bon type MIME (application/json).
+# (Sur GitHub Pages ce fichier est ignoré ; il ne sert que côté Hostinger/Apache.)
+<Files "apple-app-site-association">
+  ForceType application/json
+</Files>
