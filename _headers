@@ -1,4 +1,7 @@
-# Cloudflare Pages : force le type MIME de l'AASA (sans extension) pour les Universal Links iOS.
-# Apple exige application/json ; sinon iOS ouvre Safari au lieu de l'app.
+# Cloudflare Pages : force le type MIME des fichiers d'association deep-link.
+# AASA (sans extension) : Apple exige application/json, sinon iOS ouvre Safari au lieu de l'app.
 /.well-known/apple-app-site-association
+  Content-Type: application/json
+# assetlinks.json : déjà servi en application/json (extension .json) — explicite par symétrie/robustesse.
+/.well-known/assetlinks.json
   Content-Type: application/json

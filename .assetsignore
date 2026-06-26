@@ -1,0 +1,4 @@
+# Fichiers à NE PAS publier sur Cloudflare Pages (déploiement `wrangler pages deploy .`).
+CLAUDE.md
+.github
+.assetsignore
