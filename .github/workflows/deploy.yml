@@ -1,0 +1,22 @@
+name: Deploy to Cloudflare Pages
+
+# Republie automatiquement le site sur Cloudflare Pages à chaque modif poussée sur main.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 18c8ae8a5d2ecced60a363bba044c702
+          command: pages deploy . --project-name=myggv --branch=main --commit-dirty=true
