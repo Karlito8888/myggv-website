@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Your Account - MyGGV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Madimi One", sans-serif;
+        color: #333;
+        line-height: 1.7;
+        min-height: 100vh;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url("images/background-mobile-sm.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      @media (min-width: 481px) {
+        body::before {
+          background-image: url("images/background-mobile-lg.webp");
+        }
+      }
+
+      @media (min-width: 768px) {
+        body::before {
+          background-image: url("images/background-tablet.webp");
+        }
+      }
+
+      @media (min-width: 1024px) {
+        body::before {
+          background-image: url("images/background-tablet-landscape.webp");
+        }
+      }
+
+      @media (min-width: 1366px) {
+        body::before {
+          background-image: url("images/background-laptop.webp");
+        }
+      }
+
+      @media (min-width: 1920px) {
+        body::before {
+          background-image: url("images/background-desktop.webp");
+        }
+      }
+      .header {
+        background: rgba(91, 196, 109, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        color: white;
+        padding: 48px 20px;
+        text-align: center;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      }
+      .header h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .header p {
+        opacity: 0.95;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 48px 20px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 24px;
+        box-shadow:
+          0 25px 50px -12px rgba(0, 0, 0, 0.15),
+          0 0 0 1px rgba(255, 255, 255, 0.5),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      }
+      h2 {
+        color: #1a1a2e;
+        margin-bottom: 16px;
+        font-size: 1.4rem;
+      }
+      p {
+        margin-bottom: 16px;
+      }
+      ul,
+      ol {
+        margin-left: 24px;
+        margin-bottom: 16px;
+      }
+      li {
+        margin-bottom: 8px;
+      }
+      a {
+        color: #5bc46d;
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: #4aa85c;
+      }
+      .back-link {
+        display: inline-block;
+        margin-top: 24px;
+        padding: 12px 24px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .back-link:hover {
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+      .update-date {
+        color: #666;
+        font-size: 0.9rem;
+        background: rgba(255, 255, 255, 0.7);
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Delete Your Account</h1>
+      <p>MyGGV Mobile Application</p>
+    </div>
+
+    <div class="container">
+      <p class="update-date">Last updated: July 2026</p>
+
+      <div class="card">
+        <h2>1. Delete From Within the App</h2>
+        <p>
+          You can permanently delete your MyGGV account and all associated data
+          directly from the app, at any time:
+        </p>
+        <ol>
+          <li>Open MyGGV and sign in.</li>
+          <li>Go to the <strong>Profile</strong> tab.</li>
+          <li>Tap <strong>Delete Account</strong>.</li>
+          <li>
+            Confirm by following the on-screen prompts (a double confirmation is
+            required to prevent accidental deletion).
+          </li>
+        </ol>
+        <p>Deletion is immediate and cannot be undone.</p>
+      </div>
+
+      <div class="card">
+        <h2>2. Request Deletion by Email</h2>
+        <p>
+          If you can no longer access the app, you can request account and data
+          deletion by emailing us at
+          <a href="mailto:support@myggv.com">support@myggv.com</a> from the email
+          address associated with your account. We will process your request
+          within 30 days.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>3. What Gets Deleted</h2>
+        <p>
+          Deleting your account permanently removes all of the personal data we
+          hold about you, including:
+        </p>
+        <ul>
+          <li>Your profile (name, email, username, avatar, and contact links)</li>
+          <li>Your messages, chat activity, and private conversations</li>
+          <li>Your marketplace listings, businesses, services, and forum posts</li>
+          <li>Your coins, rewards, referrals, and game scores</li>
+          <li>Your notifications and location associations</li>
+          <li>Your authentication identity with our login provider (Clerk)</li>
+        </ul>
+        <p>
+          This action is permanent and irreversible. Shared community structures
+          (such as forum threads created by others) are not affected.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>4. Data Retention</h2>
+        <p>
+          We do not retain your personal data after deletion, except where we are
+          required to keep limited records to comply with legal obligations (for
+          example, tax or fraud-prevention requirements). Any such records are
+          kept only for as long as the law requires and are then permanently
+          deleted.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>5. Questions</h2>
+        <p>
+          For any question about account or data deletion, contact us at
+          <a href="mailto:support@myggv.com">support@myggv.com</a>. See also our
+          <a href="privacy-policy.html">Privacy Policy</a>.
+        </p>
+      </div>
+
+      <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+  </body>
+</html>
