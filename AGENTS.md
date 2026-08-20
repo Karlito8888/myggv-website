@@ -38,12 +38,11 @@ tableau de bord Cloudflare Pages).
 - **`privacy-policy.html` et `child-safety.html` sont réclamées par App Store Connect et la
   déclaration Data safety de Google Play.** Les renommer ou déplacer casse une conformité de
   boutique déjà déclarée — vérifier ces deux consoles avant de toucher leur URL.
-- **`wrangler pages deploy .` prend le répertoire entier comme racine du site.** Mesuré en HTTP sur
-  le site vivant : `privacy-policy.html` → 200, mais `AGENTS.md`, `.mcp.json` et
-  `graphify-out/graph.json` → **404**. Ce qui est ignoré par git n'est donc pas publié, et un `.md`
-  de racine ne l'était pas non plus au moment de la mesure. **Ne pas en déduire une garantie** :
-  aucun `.assetsignore` ni `wrangler.toml` n'existe ici pour l'imposer. Avant de committer un
-  fichier sensible à la racine, vérifier son URL publique après déploiement.
+- **`wrangler pages deploy .` prend le répertoire entier comme racine du site, mais ne sert pas
+  tout.** Mesuré en HTTP après déploiement : `privacy-policy.html` et `delete-account.html` → 200 ;
+  `AGENTS.md`, `.mcp.json` et `graphify-out/graph.json` → **404**, y compris pour un `.md` commité.
+  Aucun `.assetsignore` ni `wrangler.toml` n'impose cette exclusion : elle vient du comportement de
+  Cloudflare Pages. Avant de committer un fichier sensible à la racine, vérifier son URL publique.
 - Les identifiants figés dans `.well-known/` (`55KGMQ6P8Z.com.myggv.app`, empreinte SHA-256
   Android) doivent rester synchronisés avec les certificats de signature réels de l'app — un
   changement de certificat de signature côté app casse silencieusement les Universal/App Links,
