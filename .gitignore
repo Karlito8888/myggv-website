@@ -1,0 +1,12 @@
+
+# graphify (index local, régénérable)
+graphify-out/
+
+# config MCP locale (chemin absolu, propre a cette machine)
+.mcp.json
+
+# artefacts d'outillage local (index, hooks agents) — regenerables
+.codegraph/
+.serena/
+.githooks/post-commit
+.githooks/post-checkout
