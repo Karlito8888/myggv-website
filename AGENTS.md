@@ -28,10 +28,10 @@ ouvrir les fichiers HTML dans un navigateur.
 
 ## Déploiement
 
-`.github/workflows/deploy.yml` publie sur **Cloudflare Pages** (`wrangler pages deploy .`) à
-chaque push sur `main` — **pas GitHub Pages**, malgré le fichier `CNAME` (vestige d'un ancien
-hébergement GitHub Pages ; inutile pour Cloudflare, le domaine `myggv.com` y est configuré côté
-tableau de bord Cloudflare Pages).
+`.github/workflows/deploy.yml` publishes to **Cloudflare Pages** (`wrangler pages deploy .`) on
+every push to `main`. The custom domains `myggv.com`, `www.myggv.com` and `links.myggv.com` are
+attached to the Pages project `myggv` in the Cloudflare dashboard; GitHub Pages is disabled on
+this repository.
 
 ## Pièges propres à ce dépôt
 
