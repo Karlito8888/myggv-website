@@ -12,15 +12,23 @@ Site vitrine statique de MyGGV (app communautaire, Philippines), hébergé sur `
 
 ## Contenu
 
-- `index.html` — page d'accueil (tout le CSS est inline, liens App Store / Google Play).
-- `privacy-policy.html`, `child-safety.html` — pages légales de l'app MyGGV.
+- `index.html` — page d'accueil (liens App Store / Google Play).
+- `privacy-policy.html`, `child-safety.html`, `delete-account.html` — pages légales de l'app MyGGV.
+- `styles.css` — the only stylesheet, shared by every page (no inline `<style>` blocks).
+- `animations.js` — entrance, scroll-reveal, logo float and button press animations, built on
+  Motion. `vendor/motion.js` is the self-hosted UMD build of the `motion` npm package
+  (global `Motion`, version 14.1.1, MIT, licence in `vendor/motion.LICENSE.md`); to update it,
+  copy `dist/motion.js` from the package tarball. Every page's `<head>` adds the `motion`
+  class to `<html>` unless `prefers-reduced-motion: reduce`; while it is set, `[data-reveal]`
+  elements are hidden until animated, and `animations.js` removes it if Motion failed to load.
 - `i/index.html` — atterrissage des liens de parrainage (`?ref=CODE`), redirige vers le store
   détecté par user-agent et transmet le code via le paramètre `referrer` (Android).
 - `manifest.json` — manifest PWA. `app-ads.txt` — vérification éditeur AdMob/médiation.
 - `.well-known/apple-app-site-association` et `assetlinks.json` — vérification des Universal
   Links (iOS) / App Links (Android) pour `com.myggv.app` ; `_headers` force leur
   `Content-Type: application/json` (requis par iOS, sinon Safari s'ouvre au lieu de l'app).
-- `icons/`, `images/`, `logo.png`, `title.png`, `background.png` — assets statiques.
+- `icons/`, `images/`, `logo.webp`, `title.webp` — assets statiques. The PNG icons stay PNG:
+  the manifest, `apple-touch-icon` and `og:image` need them.
 
 Aucun `package.json` : pas de script, pas de gate, et le workflow `story` d'Archon ne peut pas
 tourner ici (son nœud `prealable` exige `scripts.gate`). Vérification humaine uniquement :

@@ -116,251 +116,34 @@
       rel="stylesheet"
     />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      /* =================================================================
-           IMAGES DE FOND RESPONSIVES
-           ================================================================= */
-
-      body {
-        font-family: "Madimi One", sans-serif;
-        min-height: 100svh;
-        min-height: 100dvh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-
-        /* Image par défaut (mobile small) */
-        background-image: url("images/background-mobile-sm.webp");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        /* Pas de fixed sur mobile pour de meilleures performances */
-        background-attachment: scroll;
-      }
-
-      /* Mobile Large (481px - 767px) */
-      @media (min-width: 481px) {
-        body {
-          background-image: url("images/background-mobile-lg.webp");
-        }
-      }
-
-      /* Tablette Portrait (768px - 1023px) */
-      @media (min-width: 768px) {
-        body {
-          background-image: url("images/background-tablet.webp");
-        }
-      }
-
-      /* Tablette Paysage (1024px - 1365px) */
-      @media (min-width: 1024px) {
-        body {
-          background-image: url("images/background-tablet-landscape.webp");
-          background-attachment: fixed;
-        }
-      }
-
-      /* Laptop HD (1366px - 1919px) */
-      @media (min-width: 1366px) {
-        body {
-          background-image: url("images/background-laptop.webp");
-        }
-      }
-
-      /* Desktop / Retina 2x (1920px+) */
-      @media (min-width: 1920px) {
-        body {
-          background-image: url("images/background-desktop.webp");
-        }
-      }
-
-      /* =================================================================
-           STYLES DU CONTENEUR (inchangés)
-           ================================================================= */
-
-      .container {
-        background: rgba(255, 255, 255, 0.65);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-radius: 32px;
-        padding: 56px 48px;
-        max-width: 420px;
-        width: 100%;
-        text-align: center;
-        box-shadow:
-          0 25px 50px -12px rgba(0, 0, 0, 0.25),
-          0 0 0 1px rgba(255, 255, 255, 0.5),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .logo {
-        margin-bottom: 24px;
-        animation: float 3s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-      }
-
-      .logo img {
-        max-width: 220px;
-        height: auto;
-        filter: drop-shadow(0 8px 16px rgba(91, 196, 109, 0.3));
-        transition:
-          transform 0.3s ease,
-          filter 0.3s ease;
-      }
-
-      .logo img:hover {
-        transform: scale(1.05);
-        filter: drop-shadow(0 12px 24px rgba(91, 196, 109, 0.4));
-      }
-
-      .title {
-        margin-bottom: 12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .title img {
-        max-height: 160px;
-        max-width: 270px;
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-      }
-
-      .tagline {
-        color: #555;
-        font-size: 1rem;
-        margin-bottom: 36px;
-        line-height: 1.5;
-      }
-
-      .store-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 36px;
-      }
-
-      .store-badge {
-        display: block;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border-radius: 8px;
-      }
-
-      .store-badge:hover {
-        transform: translateY(-3px);
-        filter: brightness(1.1);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-      }
-
-      .store-badge:active {
-        transform: translateY(-1px);
-      }
-
-      .store-badge img {
-        display: block;
-        height: 52px;
-        width: auto;
-      }
-
-      .links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 16px 32px;
-        font-size: 0.95rem;
-      }
-
-      .links a {
-        color: #5bc46d;
-        text-decoration: none;
-        padding: 8px 16px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .links a::after {
-        content: "";
-        position: absolute;
-        bottom: 4px;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #5bc46d, #ffd666);
-        transition: all 0.3s ease;
-        transform: translateX(-50%);
-        border-radius: 2px;
-      }
-
-      .links a:hover {
-        color: #4aa85c;
-        background: rgba(91, 196, 109, 0.1);
-      }
-
-      .links a:hover::after {
-        width: 60%;
-      }
-
-      @media (max-width: 480px) {
-        .container {
-          padding: 40px 28px;
-          border-radius: 24px;
-        }
-        h1 {
-          font-size: 2.2rem;
-        }
-        .logo img {
-          max-width: 180px;
-        }
-        .links {
-          flex-direction: column;
-          gap: 12px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        document.documentElement.classList.add("motion");
+    </script>
   </head>
-  <body>
-    <main class="container">
-      <div class="logo">
+  <body class="page-center">
+    <main class="glass solo" data-reveal="intro">
+      <div class="logo" data-float>
         <img
-          src="logo.png"
+          src="logo.webp"
           alt="Garden Grove Village Logo"
           width="163"
           height="46"
         />
       </div>
-      <div class="title">
+      <div class="title" data-reveal="intro">
         <img
-          src="title.png"
+          src="title.webp"
           alt="MyGGV"
           width="270"
           height="90"
           fetchpriority="high"
         />
       </div>
-      <p class="tagline">Connect with your local community</p>
+      <p class="tagline" data-reveal="intro">Connect with your local community</p>
 
-      <div class="store-buttons">
+      <div class="store-buttons" data-reveal="intro">
         <a
           href="https://play.google.com/store/apps/details?id=com.myggv.app"
           class="store-badge"
@@ -389,12 +172,14 @@
         </a>
       </div>
 
-      <nav class="links" aria-label="Footer navigation">
+      <nav class="links" aria-label="Footer navigation" data-reveal="intro">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="child-safety.html">Child Safety</a>
         <a href="delete-account.html">Delete Account</a>
         <a href="mailto:support@myggv.com">Contact</a>
       </nav>
     </main>
+    <script src="vendor/motion.js" defer></script>
+    <script src="animations.js" defer></script>
   </body>
 </html>
