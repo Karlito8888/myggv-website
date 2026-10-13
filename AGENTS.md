@@ -21,8 +21,8 @@ Site vitrine statique de MyGGV (app communautaire, Philippines), hébergé sur `
   copy `dist/motion.js` from the package tarball. Every page's `<head>` adds the `motion`
   class to `<html>` unless `prefers-reduced-motion: reduce`; while it is set, `[data-reveal]`
   elements are hidden until animated, and `animations.js` removes it if Motion failed to load.
-- `leaves.js` — falling leaves on a `<canvas>` behind the home card, no library, home page
-  only, skipped under `prefers-reduced-motion`.
+- `leaves.js` — falling leaves on a `<canvas>` it inserts behind the content of every page,
+  no library, skipped under `prefers-reduced-motion`.
 - `i/index.html` — atterrissage des liens de parrainage (`?ref=CODE`), redirige vers le store
   détecté par user-agent et transmet le code via le paramètre `referrer` (Android).
 - `manifest.json` — manifest PWA. `app-ads.txt` — vérification éditeur AdMob/médiation.

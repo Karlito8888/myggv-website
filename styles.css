@@ -33,7 +33,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2; /* below the .leaves canvas */
   background: url("images/background-mobile-sm.webp") center / cover no-repeat;
 }
 @media (min-width: 481px) {
@@ -60,6 +60,16 @@ body::before {
   body::before {
     background-image: url("images/background-desktop.webp");
   }
+}
+
+/* Falling leaves (leaves.js): above the background, below all page content. */
+.leaves {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 /* Hidden until animations.js reveals them; the class is only set when motion is allowed. */
@@ -97,17 +107,7 @@ a:hover {
   max-width: 420px;
   width: 100%;
   text-align: center;
-  position: relative; /* paints above the .leaves canvas */
   line-height: 1.5;
-}
-
-/* Falling leaves behind the home card (leaves.js). */
-.leaves {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
 }
 
 .logo {

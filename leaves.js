@@ -1,8 +1,12 @@
-// Leaves drifting down behind the home card, drawn on a plain <canvas> (no library).
-// Skipped when the visitor asked for reduced motion.
+// Leaves drifting down behind the content of every page, drawn on a plain <canvas>
+// (no library). Skipped when the visitor asked for reduced motion.
 (() => {
-  const canvas = document.querySelector(".leaves");
-  if (!canvas || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const canvas = document.createElement("canvas");
+  canvas.className = "leaves";
+  canvas.setAttribute("aria-hidden", "true");
+  document.body.prepend(canvas);
 
   const ctx = canvas.getContext("2d");
   const colors = ["#5bc46d", "#4aa85c", "#2e7d3f", "#8fd16a", "#ffd666"];
