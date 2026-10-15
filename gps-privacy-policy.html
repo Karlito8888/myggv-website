@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | MyGGV GPS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png" />
+    <link rel="apple-touch-icon" href="icons/icon-180x180.png" />
+    <meta name="theme-color" content="#5bc46d" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        document.documentElement.classList.add("motion");
+    </script>
+  </head>
+  <body>
+    <main class="doc">
+      <header class="glass doc-hero" data-reveal="intro">
+        <a class="logo" href="index.html" aria-label="MyGGV home" data-float>
+          <img src="logo.webp" alt="Garden Grove Village Logo" width="163" height="46" />
+        </a>
+        <h1>Privacy Policy</h1>
+        <p>MyGGV GPS Mobile Application</p>
+        <p class="update-date">Last updated: October 2026</p>
+      </header>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>1. Introduction</h2>
+        <p>
+          MyGGV GPS is a free app that guides residents and visitors to a block
+          and lot inside Garden Grove Village. It has no account and no sign-in.
+          This policy explains which data the app uses, why, and where it goes.
+        </p>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>2. Your Location</h2>
+        <p>
+          With your permission, the app uses your device's precise location
+          <strong>only while it is open</strong>, to show where you are on the
+          village map and to guide you to your destination. The app never uses
+          your location in the background. We do not store your location, sell
+          it, or use it for advertising.
+        </p>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>3. Route Calculation</h2>
+        <p>
+          To draw a route, the app sends your current position and the
+          coordinates of your destination to a public routing service: the OSRM
+          project server (<code>router.project-osrm.org</code>) or, as a
+          fallback, the FOSSGIS server (<code>routing.openstreetmap.de</code>).
+          These services receive the request and your IP address and handle
+          them under their own policies. When no routing service can be
+          reached, the app draws a straight line on your device instead.
+        </p>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>4. Village Data</h2>
+        <p>
+          The list of blocks and lots is downloaded from the MyGGV servers. These
+          requests ask for a block number only: they contain neither your
+          location nor any information about you. The village map itself is
+          stored in the app and works offline.
+        </p>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>5. Crash Reports</h2>
+        <p>
+          When the app crashes, it sends a report to Sentry, our error
+          monitoring provider, so we can fix the problem. A report contains the
+          error details, your device model, operating system and app version, a
+          random installation identifier, and the app's most recent events.
+          Those events can include the latest route request, and therefore your
+          position at that moment. Sentry may also derive an approximate
+          location from your IP address. Crash reports are used only to fix the
+          app, never for advertising or tracking.
+        </p>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>6. What We Do Not Collect</h2>
+        <ul>
+          <li>No name, email address, phone number, or account of any kind</li>
+          <li>No contacts, photos, or files</li>
+          <li>No advertising identifier, no ads, and no analytics</li>
+          <li>No tracking across other apps or websites</li>
+        </ul>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>7. Your Choices</h2>
+        <p>
+          You can deny or revoke location access at any time in your device's
+          Settings; the app then cannot guide you. Uninstalling the app stops all
+          data use. Because we hold no account and no stored location, there is
+          nothing to delete on our side; to ask for the deletion of a crash
+          report, contact us at the address below.
+        </p>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>8. Children</h2>
+        <p>
+          MyGGV GPS is not directed at children under 13 and does not knowingly
+          collect personal information from them.
+        </p>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>9. Changes to This Policy</h2>
+        <p>
+          We may update this privacy policy from time to time. Changes are posted
+          on this page with a new "Last updated" date.
+        </p>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>10. Contact Us</h2>
+        <p>
+          For any question about this privacy policy, contact us at
+          <a href="mailto:support@myggv.com">support@myggv.com</a>.
+        </p>
+      </div>
+
+      <nav class="glass links doc-nav" aria-label="Footer navigation" data-reveal="scroll">
+        <a href="index.html">Home</a>
+        <a href="gps-support.html">MyGGV GPS Support</a>
+        <a href="gps-privacy-policy.html" aria-current="page">MyGGV GPS Privacy</a>
+        <a href="mailto:support@myggv.com">Contact</a>
+      </nav>
+    </main>
+    <script src="vendor/motion.js" defer></script>
+    <script src="animations.js" defer></script>
+    <script src="leaves.js" defer></script>
+  </body>
+</html>

@@ -14,6 +14,9 @@ Site vitrine statique de MyGGV (app communautaire, Philippines), hébergé sur `
 
 - `index.html` — page d'accueil (liens App Store / Google Play).
 - `privacy-policy.html`, `child-safety.html`, `delete-account.html` — pages légales de l'app MyGGV.
+- `gps-privacy-policy.html`, `gps-support.html`: privacy policy and support pages of the separate
+  MyGGV GPS app (`com.myggv.gps`, repo `new-ggv-gps`), declared as its privacy and support URLs
+  in App Store Connect and Google Play. Same rule as below: check both consoles before moving them.
 - `styles.css` — the only stylesheet, shared by every page (no inline `<style>` blocks).
 - `animations.js` — entrance, scroll-reveal, logo float and button press animations, built on
   Motion. `vendor/motion.js` is the self-hosted UMD build of the `motion` npm package

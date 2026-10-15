@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support | MyGGV GPS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png" />
+    <link rel="apple-touch-icon" href="icons/icon-180x180.png" />
+    <meta name="theme-color" content="#5bc46d" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        document.documentElement.classList.add("motion");
+    </script>
+  </head>
+  <body>
+    <main class="doc">
+      <header class="glass doc-hero" data-reveal="intro">
+        <a class="logo" href="index.html" aria-label="MyGGV home" data-float>
+          <img src="logo.webp" alt="Garden Grove Village Logo" width="163" height="46" />
+        </a>
+        <h1>Support</h1>
+        <p>MyGGV GPS Mobile Application</p>
+        <p class="update-date">Last updated: October 2026</p>
+      </header>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>1. How It Works</h2>
+        <ol>
+          <li>Open MyGGV GPS and tap <strong>Enable GPS</strong>, then allow precise location.</li>
+          <li>Choose a block, then the lot you are going to.</li>
+          <li>Tap <strong>Navigate</strong> and follow the green line and the turn instructions.</li>
+          <li>The app tells you when you have arrived.</li>
+        </ol>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>2. Troubleshooting</h2>
+        <ul>
+          <li>
+            <strong>"Turn on precise location in Settings":</strong> the app was
+            given approximate location only, which is too imprecise to guide
+            you. Tap <strong>Open Settings</strong> and turn on precise location
+            for MyGGV GPS.
+          </li>
+          <li>
+            <strong>Location was denied:</strong> open your device's Settings,
+            find MyGGV GPS, and allow location while using the app.
+          </li>
+          <li>
+            <strong>A straight line instead of a route:</strong> route
+            calculation needs an internet connection. The village map works
+            offline, and the app points straight at your destination until the
+            connection returns.
+          </li>
+          <li>
+            <strong>"Update required":</strong> your version is no longer
+            supported. Tap <strong>Update</strong> to install the latest version
+            from your app store.
+          </li>
+        </ul>
+      </div>
+
+      <div class="glass card" data-reveal="scroll">
+        <h2>3. Contact Us</h2>
+        <p>
+          For any question or problem, email us at
+          <a href="mailto:support@myggv.com">support@myggv.com</a>. See also our
+          <a href="gps-privacy-policy.html">privacy policy</a>.
+        </p>
+      </div>
+
+      <nav class="glass links doc-nav" aria-label="Footer navigation" data-reveal="scroll">
+        <a href="index.html">Home</a>
+        <a href="gps-support.html" aria-current="page">MyGGV GPS Support</a>
+        <a href="gps-privacy-policy.html">MyGGV GPS Privacy</a>
+        <a href="mailto:support@myggv.com">Contact</a>
+      </nav>
+    </main>
+    <script src="vendor/motion.js" defer></script>
+    <script src="animations.js" defer></script>
+    <script src="leaves.js" defer></script>
+  </body>
+</html>
