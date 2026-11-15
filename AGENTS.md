@@ -8,7 +8,7 @@ Site vitrine statique de MyGGV (app communautaire, Philippines), hébergé sur `
 |---|---|
 | Règles de travail générales — vérifier avant d'affirmer, DRY/KISS/YAGNI, périmètre, échelle de doc officielle, outils obligatoires, git, accord explicite | `~/.omp/agent/RULES.md` |
 | Le poste, les graphes de code, les workflows | `~/.omp/agent/AGENTS.md` |
-| Faits durables du projet — versions, gate mesuré, dettes, points ouverts | `~/.omp/agent/bank/myggv-website-repo.md` |
+| Project identity and structural decisions | `~/.omp/agent/bank/myggv-website-repo.md` |
 
 ## Contenu
 
