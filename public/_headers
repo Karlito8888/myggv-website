@@ -1,0 +1,10 @@
+# Cloudflare Pages headers file. Rules that match the same path are merged.
+# HSTS on every response: 6 months, no includeSubDomains, no preload (Charles's fleet choice).
+/*
+  Strict-Transport-Security: max-age=15552000
+# AASA has no extension: Apple requires application/json, otherwise iOS opens Safari instead of the app.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+# assetlinks.json is already served as application/json (.json extension); explicit for symmetry.
+/.well-known/assetlinks.json
+  Content-Type: application/json

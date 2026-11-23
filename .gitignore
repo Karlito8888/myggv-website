@@ -11,6 +11,9 @@ graphify-out/
 .githooks/post-commit
 .githooks/post-checkout
 
+# local state written by `wrangler pages dev`
+.wrangler/
+
 # Archon : seul config.yaml est partagé ; artifacts/, logs/ et state/ sont locaux.
 .archon/*
 !.archon/config.yaml

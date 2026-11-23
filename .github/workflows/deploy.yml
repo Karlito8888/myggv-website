@@ -1,6 +1,8 @@
 name: Deploy to Cloudflare Pages
 
-# Republie automatiquement le site sur Cloudflare Pages à chaque modif poussée sur main.
+# Republishes the site to Cloudflare Pages on every push to main.
+# Only public/ is uploaded: the repository root (docs, CI, tool config, and the package.json
+# the action writes when it installs Wrangler) stays off the site.
 on:
   push:
     branches: [main]
@@ -15,8 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 18c8ae8a5d2ecced60a363bba044c702
-          command: pages deploy . --project-name=myggv --branch=main --commit-dirty=true
+          wranglerVersion: "4.166.0"
+          command: pages deploy public --project-name=myggv --branch=main --commit-dirty=true
